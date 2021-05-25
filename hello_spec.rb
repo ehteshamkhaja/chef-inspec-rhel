@@ -11,5 +11,9 @@ describe file('/etc/sysconfig/network-scripts/ifcfg-eth0') do
   its(:content) { should match /TYPE=Ethernet/ }
   its(:content) { should match /BOOTPROTO=static/ }
   its(:content) { should match /ONBOOT=yes/ }
-  its(:content) { should match /NM_CONTROLLED=no/ }
+end
+
+describe service('firewalld') do
+  it { should be_enabled }
+  it { should be_running }
 end
