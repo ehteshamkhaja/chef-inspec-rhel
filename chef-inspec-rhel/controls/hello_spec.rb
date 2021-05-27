@@ -13,7 +13,24 @@ describe file('/etc/sysconfig/network-scripts/ifcfg-eth0') do
   its(:content) { should match /ONBOOT=yes/ }
 end
 
+# Service checks
+
 describe service('firewalld') do
   it { should be_enabled }
   it { should be_running }
 end
+
+#User checks
+
+describe user('root') do
+  it { should exist }
+end
+
+describe user('mysql') do
+ it { should_not exist }
+end
+
+describe user('oracle') do
+ it { should_not exist }
+end
+
