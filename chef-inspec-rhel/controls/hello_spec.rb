@@ -13,6 +13,15 @@ describe file('/etc/sysconfig/network-scripts/ifcfg-eth0') do
   its(:content) { should match /ONBOOT=yes/ }
 end
 
+describe file('/etc/profile') do
+#  its(:content) { should match /TMOUT=900/ }
+#  its(:content) { should match /readonly TMOUT/ }
+  its(:content) { should match /HISTSIZE=1000/ }
+end
+
+
+
+
 # Service checks
 
 describe service('firewalld') do
@@ -33,4 +42,5 @@ end
 describe user('oracle') do
  it { should_not exist }
 end
+
 
