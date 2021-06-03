@@ -43,4 +43,42 @@ describe user('oracle') do
  it { should_not exist }
 end
 
+# HanaDB Kernel Parameters
+
+describe file('/etc/sysctl.conf') do
+  its(:content) { should match /net.ipv4.tcp_slow_start_after_idle=0/ }
+  its(:content) { should match /net.core.rmem_max=16777216/ }
+  its(:content) { should match /net.core.wmem_max=16777216/ }
+  its(:content) { should match /net.core.rmem_default=262144/ }
+  its(:content) { should match /net.core.wmem_default=262144/ }
+  its(:content) { should match /net.core.optmem_max=16777216/ }
+  its(:content) { should match /net.core.netdev_max_backlog=300000/ }
+  its(:content) { should match /net.ipv4.tcp_rmem=65536 16777216 16777216/ }
+  its(:content) { should match /net.ipv4.tcp_wmem=65536 16777216 16777216/ }
+  its(:content) { should match /net.ipv4.tcp_no_metrics_save=1/ }
+  its(:content) { should match /net.ipv4.tcp_moderate_rcvbuf=1/ }
+  its(:content) { should match /net.ipv4.tcp_window_scaling=1/ }
+  its(:content) { should match /net.ipv4.tcp_timestamps=1/ }
+  its(:content) { should match /net.ipv4.tcp_sack=1/ }
+  its(:content) { should match /sunrpc.tcp_slot_table_entries=128/ }
+end
+
+#MYSQL Kernel Parameters
+describe file('/etc/sysctl.conf') do
+  its(:content) { should match /net.ipv4.tcp_slow_start_after_idle=0/ }
+  its(:content) { should match /net.core.rmem_max=16777216/ }
+  its(:content) { should match /net.core.wmem_max=16777216/ }
+  its(:content) { should match /net.core.rmem_default=262144/ }
+  its(:content) { should match /net.core.wmem_default=262144/ }
+  its(:content) { should match /net.core.optmem_max=16777216/ }
+  its(:content) { should match /net.core.netdev_max_backlog=300000/ }
+  its(:content) { should match /net.ipv4.tcp_rmem=65536 16777216 16777216/ }
+  its(:content) { should match /net.ipv4.tcp_wmem=65536 16777216 16777216/ }
+  its(:content) { should match /net.ipv4.tcp_no_metrics_save=1/ }
+  its(:content) { should match /net.ipv4.tcp_moderate_rcvbuf=1/ }
+  its(:content) { should match /net.ipv4.tcp_window_scaling=1/ }
+  its(:content) { should match /net.ipv4.tcp_timestamps=1/ }
+  its(:content) { should match /net.ipv4.tcp_sack=1/ }
+  its(:content) { should match /sunrpc.tcp_slot_table_entries=128/ }
+end
 
