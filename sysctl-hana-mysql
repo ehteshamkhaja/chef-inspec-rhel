@@ -1,0 +1,41 @@
+Hana kernel parameters - net.ipv4.tcp_slow_start_after_idle	/etc/sysctl.conf settings	0	Hana DB
+Hana kernel parameters - net.core.rmem_max	/etc/sysctl.conf settings	16777216	Hana DB
+Hana kernel parameters - net.core.wmem_max	/etc/sysctl.conf settings	16777216	Hana DB
+Hana kernel parameters - net.core.rmem_default	/etc/sysctl.conf settings	262144	Hana DB
+Hana kernel parameters - net.core.wmem_default	/etc/sysctl.conf settings	262144	Hana DB
+Hana kernel parameters - net.core.optmem_max	/etc/sysctl.conf settings	16777216	Hana DB
+Hana kernel parameters - net.core.netdev_max_backlog	/etc/sysctl.conf settings	300000	Hana DB
+Hana kernel parameters - net.ipv4.tcp_rmem	/etc/sysctl.conf settings	65536 16777216 16777216	Hana DB
+Hana kernel parameters - net.ipv4.tcp_wmem	/etc/sysctl.conf settings	65536 16777216 16777216	Hana DB
+Hana kernel parameters - net.ipv4.tcp_no_metrics_save	/etc/sysctl.conf settings	1	Hana DB
+Hana kernel parameters - net.ipv4.tcp_moderate_rcvbuf	/etc/sysctl.conf settings	1	Hana DB
+Hana kernel parameters - net.ipv4.tcp_window_scaling	/etc/sysctl.conf settings	1	Hana DB
+Hana kernel parameters - net.ipv4.tcp_timestamps	/etc/sysctl.conf settings	1	Hana DB
+Hana kernel parameters - net.ipv4.tcp_sack	/etc/sysctl.conf settings	1	Hana DB
+Hana kernel parameters - sunrpc.tcp_slot_table_entries	/etc/sysctl.conf settings	128	Hana DB
+Disable transparent hugepages			MySQL DB
+Configure C-States for lower latency in Linux			MySQL DB
+Create separate LVM volume group for data and logs	There is no file system standard defined for data and logs for mysql so cannot validate this check		MySQL DB
+Use NOOP I/O scheduler to better support flash storage (1.3.3)	Refer to checkIOScheduler function	"mPathHitachiScheduler=deadline
+mPathXtreamIOScheduler=noop
+powerPathSymmetrixScheduler=deadline
+powerPathXtreamIOScheduler=noop
+powerPathVplexScheduler=noop "	MySQL DB
+Use large pages(vm.nr_hugepages) 			MySQL DB
+Max file limit - nofile	/etc/security/limits.conf 	999999	MySQL DB
+Max file limit - memlock	/etc/security/limits.conf 	unlimited	MySQL DB
+MySQL kernel parameters - net.ipv4.tcp_slow_start_after_idle	/etc/sysctl.conf settings	0	MySQL DB
+MySQL kernel parameters - net.core.rmem_max	/etc/sysctl.conf settings	16777216	MySQL DB
+MySQL kernel parameters - net.core.wmem_max	/etc/sysctl.conf settings	16777216	MySQL DB
+MySQL kernel parameters - net.core.rmem_default	/etc/sysctl.conf settings	262144	MySQL DB
+MySQL kernel parameters - net.core.wmem_default	/etc/sysctl.conf settings	262144	MySQL DB
+MySQL kernel parameters - net.core.optmem_max	/etc/sysctl.conf settings	16777216	MySQL DB
+MySQL kernel parameters - net.core.netdev_max_backlog	/etc/sysctl.conf settings	300000	MySQL DB
+MySQL kernel parameters - net.ipv4.tcp_rmem	/etc/sysctl.conf settings	65536 16777216 16777216	MySQL DB
+MySQL kernel parameters - net.ipv4.tcp_wmem	/etc/sysctl.conf settings	65536 16777216 16777216	MySQL DB
+MySQL kernel parameters - net.ipv4.tcp_no_metrics_save	/etc/sysctl.conf settings	1	MySQL DB
+MySQL kernel parameters - net.ipv4.tcp_moderate_rcvbuf	/etc/sysctl.conf settings	1	MySQL DB
+MySQL kernel parameters - net.ipv4.tcp_window_scaling	/etc/sysctl.conf settings	1	MySQL DB
+MySQL kernel parameters - net.ipv4.tcp_timestamps	/etc/sysctl.conf settings	1	MySQL DB
+MySQL kernel parameters - net.ipv4.tcp_sack	/etc/sysctl.conf settings	1	MySQL DB
+MySQL kernel parameters - sunrpc.tcp_slot_table_entries	/etc/sysctl.conf settings	128	MySQL DB
