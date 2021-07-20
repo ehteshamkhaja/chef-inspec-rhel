@@ -4,7 +4,7 @@ control 'Check CPU' do
   desc 'BASE Cecks'
 
 describe command('grep -i processor /proc/cpuinfo | cut -f2 -d :') do
-   its('stdout') { should match (/[0]/) }
+   its('stdout') { should match (/[16]/) }
  end
 end
 
@@ -13,7 +13,7 @@ control 'Check Memory' do
   title 'Platform Common Checks'
   desc 'BASE Cecks'
 describe command('grep -i MemTotal /proc/meminfo | cut -f2 -d :') do
-   its('stdout') { should match (/[667984]/) }
+   its('stdout') { should match (/[60000000]/) }
 end
 end
 
@@ -22,7 +22,7 @@ control 'Check OS Version' do
   title 'Platform Common Checks'
   desc 'BASE Cecks'
 describe command('grep -i PRETTY_NAME /etc/os-release | cut -f2 -d =') do
-   its('stdout') { should match (/["CentOS Linux 7 (Core)"]/) }
+   its('stdout') { should match (/["SUSE Linux Enterprise Server 12 SP5"]/) }
 end
 end
 
