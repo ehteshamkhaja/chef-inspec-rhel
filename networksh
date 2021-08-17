@@ -1,0 +1,26 @@
+#!/bin/bash
+
+
+
+while IFS= read -r line; do
+  #dc60-network-rg dc60-app-vnet pc60-backup-sbn 10.60.144.0/22
+   input=`echo $line | awk 'FNR == 1 {print}'`
+  # echo $rg
+   rg=`echo $input | awk '{print $1}'`
+   echo "resource group : $rg"
+   vnet=`echo $input | awk '{print $2}'`
+   echo "vnet : $vnet"
+   subnet=`echo $input | awk '{print $3}'`
+   echo "Subnet : $subnet"
+   ipaddr=`echo $input | awk '{print $4}'`
+   echo "IP Address : $ipaddr"
+   echo "==========================="
+done < "$1"
+
+
+====================================
+
+Input file
+
+dc60-network-rg dc60-app-vnet pc60-backup-sbn        10.60.144.0/22
+dc60-network-rg dc60-app-vnet ss60-backup-infras-sbn 10.169.249.96/2
